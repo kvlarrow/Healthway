@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rppl/components/pallete.dart';
+import 'package:rppl/pages/rute.dart';
 
 class MyDistanceList extends StatelessWidget {
   final int jarak;
@@ -62,7 +63,14 @@ class MyDistanceList extends StatelessWidget {
                       ),
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const MyRoute(),
+                          ),
+                        );
+                      },
                       icon: Icon(
                         Icons.location_pin,
                         color: MyColor.mainColor,

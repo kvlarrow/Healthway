@@ -59,20 +59,16 @@ class MyCard extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  MyBedClass(
-                    classColor: MyColor.firstClass,
+                  MyBedClass(                    
                     bedClass: 'I',
                   ),
-                  MyBedClass(
-                    classColor: MyColor.secondClass,
+                  MyBedClass(                    
                     bedClass: 'II',
                   ),
-                  MyBedClass(
-                    classColor: MyColor.secondClass,
+                  MyBedClass(                    
                     bedClass: 'II',
                   ),
-                  MyBedClass(
-                    classColor: MyColor.thirdClass,
+                  MyBedClass(                    
                     bedClass: 'III',
                   ),
                 ],
