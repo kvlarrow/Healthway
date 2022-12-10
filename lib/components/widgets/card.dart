@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rppl/components/bedClass.dart';
-import 'package:rppl/components/pallete.dart';
+import 'package:rppl/components/widgets/bedClass.dart';
+import 'package:rppl/components/colors/pallete.dart';
 
 class MyCard extends StatelessWidget {
   final String namaRumahSakit;

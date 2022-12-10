@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rppl/components/pallete.dart';
+import 'package:rppl/components/colors/pallete.dart';
 import 'package:rppl/pages/rute.dart';
 
 class MyDistanceList extends StatelessWidget {

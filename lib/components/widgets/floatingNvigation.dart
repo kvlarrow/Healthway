@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rppl/components/pallete.dart';
+import 'package:rppl/components/colors/pallete.dart';
 import 'package:rppl/pages/home.dart';
-import '../pages/maps.dart';
+import '../../pages/maps.dart';
 
 class MyFloatingNavigation extends StatelessWidget {
   const MyFloatingNavigation({super.key});

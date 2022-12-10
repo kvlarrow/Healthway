@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rppl/components/card.dart';
-import 'package:rppl/components/floatingNvigation.dart';
-import 'package:rppl/components/pallete.dart';
+import 'package:rppl/components/widgets/card.dart';
+import 'package:rppl/components/widgets/floatingNvigation.dart';
+import 'package:rppl/components/colors/pallete.dart';
 import 'package:rppl/pages/maps.dart';
 
 

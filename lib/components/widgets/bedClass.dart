@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rppl/components/pallete.dart';
+import 'package:rppl/components/colors/pallete.dart';
 
 class MyBedClass extends StatelessWidget {  
   final String bedClass;
@@ -23,7 +23,7 @@ class MyBedClass extends StatelessWidget {
                       width: 5,
                       height: 48,
                       decoration: BoxDecoration(
-                        color: (bedClass.length ==1)? MyColor.firstClass:(bedClass.length==2)? MyColor.secondClass: MyColor.thirdClass,                        
+                        color: (bedClass.length == 1)? MyColor.firstClass:(bedClass.length == 2)? MyColor.secondClass: MyColor.thirdClass,                        
                         borderRadius: BorderRadius.circular(100),
                       ),
                     ),

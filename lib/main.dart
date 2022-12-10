@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:rppl/pages/rute.dart';
 
-import 'components/splash_screen.dart';
+import 'components/addon/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
