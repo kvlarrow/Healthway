@@ -8,7 +8,7 @@ class MyPreview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 8),
+      margin: EdgeInsets.only(left: 8, right: 2),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(13),
       ),
