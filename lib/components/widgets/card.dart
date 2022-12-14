@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:rppl/components/widgets/bedClass.dart';
 import 'package:rppl/components/colors/pallete.dart';
 
@@ -15,7 +16,7 @@ class MyCard extends StatelessWidget {
         children: [
           Text(
             '$namaRumahSakit',
-            style: TextStyle(
+            style: GoogleFonts.meeraInimai(
               fontSize: 19,
               fontWeight: FontWeight.bold,
             ),
@@ -29,10 +30,13 @@ class MyCard extends StatelessWidget {
             child: Text(
               '$alamatRumahSakit',
               textAlign: TextAlign.center,
+              style: GoogleFonts.meeraInimai(
+                fontWeight: FontWeight.normal,
+              ),
             ),
           ),
           SizedBox(
-            height: 15,
+            height: 19,
           ),
           Container(
             height: 347,

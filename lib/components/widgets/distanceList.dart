@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:rppl/components/colors/pallete.dart';
 import 'package:rppl/pages/rute.dart';
 
@@ -48,7 +49,7 @@ class MyDistanceList extends StatelessWidget {
               children: [
                 Text(
                   '$namaRS',
-                  style: TextStyle(fontSize: 12),
+                  style: GoogleFonts.meeraInimai(fontSize: 12),
                 ),
                 Container(      
                   height: 33,            
@@ -61,7 +62,7 @@ class MyDistanceList extends StatelessWidget {
                           children: [
                             Text(
                               '${jarak}m',
-                              style: TextStyle(fontSize: 12),
+                              style: GoogleFonts.meeraInimai(fontSize: 12),
                             ),                            
                             Container(
                               height: 1,

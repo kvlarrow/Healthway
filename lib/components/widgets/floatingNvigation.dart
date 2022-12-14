@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:rppl/components/colors/pallete.dart';
 import 'package:rppl/pages/home.dart';
 import '../../pages/maps.dart';
 
 class MyFloatingNavigation extends StatelessWidget {
-  const MyFloatingNavigation({super.key});
+  final String namePage1;
+  final String namePage2;
+  final Color page1Color;
+  final Color page2Color;
+
+  MyFloatingNavigation({required this.namePage1, required this.namePage2, required this.page1Color, required this.page2Color});
 
   @override
   Widget build(BuildContext context) {
@@ -24,34 +30,60 @@ class MyFloatingNavigation extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  IconButton(
-                    onPressed: () {
+                  GestureDetector(
+                    onTap: (() {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                           builder: (context) => MyHome(),
                         ),
                       );
-                    },
-                    icon: Icon(
-                      Icons.bed_outlined,
-                      size: 20,
-                      color: MyColor.white,
+                    }),
+                    child: Container(
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.king_bed,
+                            color: page1Color,
+                            size: 25,
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          Text(
+                            '$namePage1',
+                            style: GoogleFonts.meeraInimai(color: page1Color, fontSize: 12,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                  IconButton(
-                    onPressed: () {
+                  GestureDetector(
+                    onTap: (() {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const MyMaps(),
+                          builder: (context) => MyMaps(),
                         ),
                       );
-                    },
-                    icon: Icon(
-                      Icons.map,
-                      size: 20,
-                      color: MyColor.white,
+                    }),
+                    child: Container(
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.map_rounded,
+                            color: page2Color,
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                            '$namePage2',
+                            style: GoogleFonts.meeraInimai(color: page2Color, fontSize: 12, fontWeight: FontWeight.w400),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
