@@ -18,7 +18,7 @@ class _MySplashState extends State<MySplash> {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => const MyHome()));
     });
-  }
+  }  
 
   @override
   Widget build(BuildContext context) {
