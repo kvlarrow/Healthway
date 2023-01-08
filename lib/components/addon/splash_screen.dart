@@ -18,7 +18,7 @@ class _MySplashState extends State<MySplash> {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => const MyHome()));
     });
-  }  
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class _MySplashState extends State<MySplash> {
             SizedBox(
               height: 19,
               width: 19,
-              child: CircularProgressIndicator(              
+              child: CircularProgressIndicator(
                 color: MyColor.white,
                 strokeWidth: 3,
               ),

@@ -1,9 +1,7 @@
 import 'dart:convert';
-import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rppl/components/widgets/card.dart';
-import 'package:rppl/components/widgets/floatingNvigation.dart';
 import 'package:rppl/components/colors/pallete.dart';
 import 'package:rppl/model/hospital.dart';
 import 'package:rppl/pages/maps.dart';
@@ -26,8 +24,10 @@ class _MyHomeState extends State<MyHome> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    fetchData();
-    fetchData();
+    if (hospitals.isEmpty) {
+      fetchData();
+      fetchData();
+    }
   }
 
   void fetchData() async {
@@ -80,15 +80,6 @@ class _MyHomeState extends State<MyHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColor.mainColor,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          fetchData();
-        },
-        child: Text(
-          'Fetch',
-          style: TextStyle(fontSize: 12),
-        ),
-      ),
       body: AnnotatedRegion(
         value: SystemUiOverlayStyle.light,
         child: SafeArea(
@@ -160,10 +151,19 @@ class _MyHomeState extends State<MyHome> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 10,),
-                                Center(child: Text('$status'),),
                                 SizedBox(
-                                  height: 20,
+                                  height: 10,
+                                ),
+                                (hospitals.isEmpty)
+                                    ? Text(
+                                        'Fetching Data...',
+                                        style: GoogleFonts.meeraInimai(
+                                          fontSize: 19.0,
+                                        ),
+                                      )
+                                    : Text(''),
+                                Center(
+                                  child: Text('$status'),
                                 ),
                                 Expanded(
                                   child: (searchController.text == '')
@@ -269,10 +269,11 @@ class _MyHomeState extends State<MyHome> {
                             ),
                             GestureDetector(
                               onTap: (() {
-                                Navigator.pushReplacement(
+                                Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => MyMaps(),
+                                    builder: (context) =>
+                                        MyMaps(hospitalMap: hospitals),
                                   ),
                                 );
                               }),
