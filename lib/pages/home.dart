@@ -114,6 +114,7 @@ class _MyHomeState extends State<MyHome> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Container(
+                            padding: EdgeInsets.only(bottom: 100),
                             height: 800,
                             width: 500,
                             // padding: EdgeInsets.all(23),
