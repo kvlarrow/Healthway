@@ -3,19 +3,27 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rppl/components/widgets/card.dart';
 import 'package:rppl/components/widgets/distanceList.dart';
-import 'package:rppl/components/widgets/floatingNvigation.dart';
 import 'package:rppl/components/colors/pallete.dart';
+import 'package:rppl/model/hospital.dart';
 import 'package:rppl/pages/home.dart';
 import 'package:rppl/pages/maps.dart';
+import 'package:rppl/pages/rute.dart';
 
 class MyMaps extends StatefulWidget {
-  const MyMaps({super.key});
+  List<Hospital> hospitalMap;
+
+  MyMaps({required this.hospitalMap});
 
   @override
   State<MyMaps> createState() => _MyMapsState();
 }
 
 class _MyMapsState extends State<MyMaps> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +52,7 @@ class _MyMapsState extends State<MyMaps> {
                       ),
                     ),
                     Container(
-                      height: 1000,
+                      height: MediaQuery.of(context).size.height - 70,
                       width: 500,
                       decoration: BoxDecoration(
                         color: MyColor.white,
@@ -55,25 +63,31 @@ class _MyMapsState extends State<MyMaps> {
                       ),
                       child: Column(
                         children: [
-                          Padding(
+                          Container(
+                            height: 500,
                             padding: EdgeInsets.all(23),
                             child: Column(
                               children: [
-                                Column(
-                                  children: [
-                                    MyDistanceList(
-                                        jarak: 10,
-                                        namaRS: 'RS Umum Daerah Dr. Soetomo'),
-                                    MyDistanceList(
-                                        jarak: 16, namaRS: 'RS Umum Siloam'),
-                                    MyDistanceList(
-                                        jarak: 11,
-                                        namaRS:
-                                            'RS Primasatya Husada Citra (PHC) Surabaya'),
-                                    MyDistanceList(
-                                        jarak: 40,
-                                        namaRS: 'RS Manyar Medical Center'),
-                                  ],
+                                Expanded(
+                                  child: ListView.builder(
+                                    itemCount: widget.hospitalMap.length,
+                                    itemBuilder: (context, index) {
+                                      return ListTile(
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) => MyRoute(
+                                                  nama: widget
+                                                      .hospitalMap[index].name),
+                                            ),
+                                          );
+                                        },
+                                        title: Text(
+                                            widget.hospitalMap[index].name),
+                                      );
+                                    },
+                                  ),
                                 ),
                               ],
                             ),
@@ -102,12 +116,13 @@ class _MyMapsState extends State<MyMaps> {
                           children: [
                             GestureDetector(
                               onTap: (() {
-                                Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => MyHome(),
-                                  ),
-                                );
+                                // Navigator.pop(
+                                //   context,
+                                //   MaterialPageRoute(
+                                //     builder: (context) => MyHome(),
+                                //   ),
+                                // );
+                                Navigator.pop(context);
                               }),
                               child: Container(
                                 child: Row(
@@ -132,8 +147,7 @@ class _MyMapsState extends State<MyMaps> {
                               ),
                             ),
                             GestureDetector(
-                              onTap: (() {                                
-                              }),
+                              onTap: (() {}),
                               child: Container(
                                 child: Row(
                                   children: [
