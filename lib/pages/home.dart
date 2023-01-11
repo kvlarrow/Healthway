@@ -156,12 +156,19 @@ class _MyHomeState extends State<MyHome> {
                                   height: 10,
                                 ),
                                 (hospitals.isEmpty)
-                                    ? Text(
-                                        'Fetching Data...',
-                                        style: GoogleFonts.meeraInimai(
-                                          fontSize: 19.0,
-                                        ),
-                                      )
+                                    ? Container(
+                                      height: 500,
+                                      child: Center(
+                                        child: SizedBox(
+                                            height: 19,
+                                            width: 19,
+                                            child: CircularProgressIndicator(
+                                              color: MyColor.mainColor,
+                                              strokeWidth: 3,
+                                            ),
+                                          ),
+                                      ),
+                                    )
                                     : Text(''),
                                 Center(
                                   child: Text('$status'),

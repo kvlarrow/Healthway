@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rppl/components/colors/pallete.dart';
 import 'package:rppl/pages/home.dart';
+import 'package:rppl/pages/maps2.dart';
 
 class MySplash extends StatefulWidget {
   const MySplash({super.key});
