@@ -83,7 +83,7 @@ class MyCard extends StatelessWidget {
                 ),
               ],
             ),
-            child: Container(             
+            child: Container(
               padding: EdgeInsets.all(14),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -100,7 +100,11 @@ class MyCard extends StatelessWidget {
                               width: 5,
                               height: 40,
                               decoration: BoxDecoration(
-                                color: (tersedia < 5)? Colors.yellow : (tersedia >= 5 && tersedia < 10)? Colors.green: Colors.blue,
+                                color: (tersedia < 5)
+                                    ? Colors.yellow
+                                    : (tersedia >= 5 && tersedia < 10)
+                                        ? Colors.green
+                                        : Colors.blue,
                                 borderRadius: BorderRadius.circular(100),
                               ),
                             ),
@@ -117,12 +121,15 @@ class MyCard extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Container(
-                        width: 50,
-                        child: Text(
-                          '$room_name',
-                          style: GoogleFonts.meeraInimai(
-                            fontSize: 12,
+                      Flexible(
+                        child: Container(
+                          width: 80,
+                          child: Text(
+                            '$room_name',
+                            overflow: TextOverflow.ellipsis,
+                            style: GoogleFonts.meeraInimai(
+                              fontSize: 12,
+                            ),
                           ),
                         ),
                       ),
@@ -149,7 +156,7 @@ class MyCard extends StatelessWidget {
           SizedBox(
             height: 14,
           ),
-          Container(            
+          Container(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -163,12 +170,17 @@ class MyCard extends StatelessWidget {
                   alignment: Alignment.centerRight,
                   child: Row(
                     children: [
-                      Icon(
-                        Icons.call,
-                        size: 15,
+                      Container(
+                        width: 15,
+                        child: IconButton(
+                          icon: Icon(Icons.call, size: 15,),
+                          onPressed: () {
+                            launch('tel:${telp}');
+                          },
+                        ),
                       ),
                       SizedBox(
-                        width: 3,
+                        width: 10,
                       ),
                       Text(
                         '$telp',
