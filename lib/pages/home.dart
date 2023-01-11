@@ -121,7 +121,7 @@ class _MyHomeState extends State<MyHome> {
                             height: 800,
                             width: 500,
                             // padding: EdgeInsets.all(23),
-                            child: Column(
+                            child: Stack(
                               children: [
                                 Container(
                                   padding: EdgeInsets.only(
@@ -176,58 +176,63 @@ class _MyHomeState extends State<MyHome> {
                                 Center(
                                   child: Text('$status'),
                                 ),
-                                Expanded(
-                                  child: (searchController.text == '')
-                                      ? ListView.builder(
-                                          itemCount: hospitals.length,
-                                          itemBuilder: (context, index) {
-                                            return MyCard(
-                                              namaRumahSakit:
-                                                  hospitals[index].name,
-                                              alamatRumahSakit:
-                                                  hospitals[index].address,
-                                              id: hospitals[index].id,
-                                              telp: hospitals[index].phone,
-                                              kelas: hospitals[index]
-                                                  .available_beds
-                                                  .bed_class,
-                                              info: hospitals[index]
-                                                  .available_beds
-                                                  .info,
-                                              room_name: hospitals[index]
-                                                  .available_beds
-                                                  .room_name,
-                                              tersedia: hospitals[index]
-                                                  .available_beds
-                                                  .availabel,
-                                            );
-                                          },
-                                        )
-                                      : ListView.builder(
-                                          itemCount: filter_display.length,
-                                          itemBuilder: (context, index) {
-                                            return MyCard(
-                                              namaRumahSakit:
-                                                  filter_display[index].name,
-                                              alamatRumahSakit:
-                                                  filter_display[index].address,
-                                              id: filter_display[index].id,
-                                              telp: filter_display[index].phone,
-                                              kelas: filter_display[index]
-                                                  .available_beds
-                                                  .bed_class,
-                                              info: filter_display[index]
-                                                  .available_beds
-                                                  .info,
-                                              room_name: filter_display[index]
-                                                  .available_beds
-                                                  .room_name,
-                                              tersedia: filter_display[index]
-                                                  .available_beds
-                                                  .availabel,
-                                            );
-                                          },
-                                        ),
+                                Container(
+                                  padding: EdgeInsets.only(top: 55),
+                                  child: Expanded(
+                                    child: (searchController.text == '')
+                                        ? ListView.builder(
+                                            itemCount: hospitals.length,
+                                            itemBuilder: (context, index) {
+                                              return MyCard(
+                                                namaRumahSakit:
+                                                    hospitals[index].name,
+                                                alamatRumahSakit:
+                                                    hospitals[index].address,
+                                                id: hospitals[index].id,
+                                                telp: hospitals[index].phone,
+                                                kelas: hospitals[index]
+                                                    .available_beds
+                                                    .bed_class,
+                                                info: hospitals[index]
+                                                    .available_beds
+                                                    .info,
+                                                room_name: hospitals[index]
+                                                    .available_beds
+                                                    .room_name,
+                                                tersedia: hospitals[index]
+                                                    .available_beds
+                                                    .availabel,
+                                              );
+                                            },
+                                          )
+                                        : ListView.builder(
+                                            itemCount: filter_display.length,
+                                            itemBuilder: (context, index) {
+                                              return MyCard(
+                                                namaRumahSakit:
+                                                    filter_display[index].name,
+                                                alamatRumahSakit:
+                                                    filter_display[index]
+                                                        .address,
+                                                id: filter_display[index].id,
+                                                telp:
+                                                    filter_display[index].phone,
+                                                kelas: filter_display[index]
+                                                    .available_beds
+                                                    .bed_class,
+                                                info: filter_display[index]
+                                                    .available_beds
+                                                    .info,
+                                                room_name: filter_display[index]
+                                                    .available_beds
+                                                    .room_name,
+                                                tersedia: filter_display[index]
+                                                    .available_beds
+                                                    .availabel,
+                                              );
+                                            },
+                                          ),
+                                  ),
                                 ),
                               ],
                             ),
