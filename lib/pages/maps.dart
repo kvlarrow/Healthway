@@ -78,8 +78,11 @@ class _MyMapsState extends State<MyMaps> {
                                             context,
                                             MaterialPageRoute(
                                               builder: (context) => MyRoute(
-                                                  nama: widget
-                                                      .hospitalMap[index].name),
+                                                nama: widget
+                                                    .hospitalMap[index].name,
+                                                id: widget
+                                                    .hospitalMap[index].id,
+                                              ),
                                             ),
                                           );
                                         },

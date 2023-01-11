@@ -13,12 +13,12 @@ class MyDistanceList extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => MyRoute(nama: namaRS),
-          ),
-        );
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(
+        //     builder: (context) => ,
+        //   ),
+        // );
       },
       child: Container(
         margin: EdgeInsets.only(bottom: 13),

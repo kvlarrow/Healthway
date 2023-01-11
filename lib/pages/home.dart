@@ -26,15 +26,8 @@ class _MyHomeState extends State<MyHome> {
     super.initState();
     if (hospitals.isEmpty) {
       fetchData();
-      fetchData();
-      fetchData();
-      fetchData();
-      fetchData();
+      fetchData();      
     }
-  }
-
-  void fetchLocation() async {
-    
   }
 
   void fetchData() async {
@@ -164,7 +157,7 @@ class _MyHomeState extends State<MyHome> {
                                 ),
                                 (hospitals.isEmpty)
                                     ? Container(
-                                        height: 500,
+                                        height: 600,
                                         child: Center(
                                           child: SizedBox(
                                             height: 19,
@@ -177,8 +170,10 @@ class _MyHomeState extends State<MyHome> {
                                         ),
                                       )
                                     : Text(''),
-                                Center(
-                                  child: Text('$status'),
+                                
+                                Container(
+                                  height: 400,
+                                  child: Center(child: Text(status, style: TextStyle(color: MyColor.black),)),
                                 ),
                                 Container(
                                   padding: EdgeInsets.only(top: 55),
