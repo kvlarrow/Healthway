@@ -32,6 +32,10 @@ class _MyHomeState extends State<MyHome> {
     }
   }
 
+  void fetchLocation() async {
+    
+  }
+
   void fetchData() async {
     print('Fetch hospitals');
     const url =
