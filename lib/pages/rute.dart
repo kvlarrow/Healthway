@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
@@ -10,6 +9,8 @@ import 'package:rppl/components/colors/pallete.dart';
 import 'package:rppl/components/widgets/locationPreview.dart';
 import 'package:http/http.dart' as http;
 import 'package:rppl/model/location.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyRoute extends StatefulWidget {
   String nama;
@@ -44,8 +45,36 @@ class _MyRouteState extends State<MyRoute> {
     super.initState();
     fetchLocation();
     fetchLocation();
-    fetchLocation();
-    fetchLocation();
+  }
+
+  void navigasi() async {
+    LocationPermission permission = await Geolocator.checkPermission();
+
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        print('Location permissions are denied');
+      } else if (permission == LocationPermission.deniedForever) {
+        print("'Location permissions are permanently denied");
+      } else {
+        getLocation();
+      }
+    } else {
+      getLocation();
+    }
+  }
+
+  void getLocation() async {
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+    print(position.longitude); //Output: 80.24599079
+    print(position.latitude); //Output: 29.6593457
+
+    String long = position.longitude.toString();
+    String lat = position.latitude.toString();
+
+    launch(
+        'https://www.google.com/maps/dir/?api=1&origin=${lat},${long}&destination=${lokasiRs['lat']},${lokasiRs['long']}');
   }
 
   Future<void> _goToTheLake() async {
@@ -85,22 +114,6 @@ class _MyRouteState extends State<MyRoute> {
     });
   }
 
-  // final Completer<GoogleMapController> _controller =
-  //     Completer<GoogleMapController>();
-
-  // CameraPosition _kGooglePlex = CameraPosition(
-  //   target:
-  //       LatLng(double.parse(lokasiRs['lat']), double.parse(lokasiRs['long'])),
-  //   zoom: 14.4746,
-  // );
-
-  // CameraPosition _kLake = CameraPosition(
-  //     bearing: 192.8334901395799,
-  //     target:
-  //         LatLng(double.parse(lokasiRs['lat']), double.parse(lokasiRs['long'])),
-  //     tilt: 59.440717697143555,
-  //     zoom: 19.151926040649414);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -130,7 +143,21 @@ class _MyRouteState extends State<MyRoute> {
                                   ),
                                 )
                               : GoogleMap(
-                                  mapType: MapType.normal,
+                                  markers: [
+                                    Marker(
+                                      markerId: MarkerId('m1'),
+                                      position: (lokasiRs['lat'] != null)
+                                          ? LatLng(
+                                              double.parse(lokasiRs['lat']),
+                                              double.parse(lokasiRs['long']),
+                                            )
+                                          : LatLng(
+                                              double.parse('34.135475'),
+                                              double.parse('-40.456746'),
+                                            ),
+                                    ),
+                                  ].toSet(),
+                                  mapType: MapType.hybrid,
                                   initialCameraPosition: _kGooglePlex,
                                   onMapCreated:
                                       (GoogleMapController controller) {
@@ -216,10 +243,14 @@ class _MyRouteState extends State<MyRoute> {
                                       color: MyColor.black),
                                 ),
                               ),
-                              SizedBox(height: 5,),
+                              SizedBox(
+                                height: 5,
+                              ),
                               Center(
                                 child: Text(
-                                  lokasiRs['address'],
+                                  (lokasiRs['address'] != null)
+                                      ? lokasiRs['address']
+                                      : '',
                                   style: GoogleFonts.meeraInimai(
                                       fontSize: 12,
                                       fontWeight: FontWeight.normal,
@@ -239,11 +270,11 @@ class _MyRouteState extends State<MyRoute> {
                                           _goToTheLake();
                                         },
                                         icon: Icon(
-                                          Icons.directions,
+                                          Icons.remove_red_eye_rounded,
                                           size: 20,
                                         ),
                                         label: Text(
-                                          'Rute',
+                                          'View',
                                           style: GoogleFonts.meeraInimai(
                                               fontSize: 12),
                                         ),
@@ -269,14 +300,14 @@ class _MyRouteState extends State<MyRoute> {
                                     SizedBox(
                                       child: ElevatedButton.icon(
                                         onPressed: () {
-                                          print(lokasiRs);
+                                          navigasi();
                                         },
                                         icon: Icon(
-                                          Icons.arrow_upward_sharp,
+                                          Icons.navigation_rounded,
                                           size: 20,
                                         ),
                                         label: Text(
-                                          'Mulai',
+                                          'Navigate',
                                           style: GoogleFonts.meeraInimai(
                                               fontSize: 12),
                                         ),

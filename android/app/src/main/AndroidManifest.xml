@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.rppl">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> 
    <application
         android:label="rppl"
         android:name="${applicationName}"
@@ -31,6 +32,6 @@
             android:name="flutterEmbedding"
             android:value="2" />
         <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="AIzaSyB7-BtpbKyOS0sxUEC7o3qoh9F0OpQ8teY"/>
+               android:value="AIzaSyB7-BtpbKyOS0sxUEC7o3qoh9F0OpQ8teY"/>               
     </application>
 </manifest>

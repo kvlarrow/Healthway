@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rppl/components/colors/pallete.dart';
 import 'package:rppl/pages/home.dart';
 import 'package:rppl/pages/maps2.dart';
+import 'package:rppl/pages/rute.dart';
 
 class MySplash extends StatefulWidget {
   const MySplash({super.key});
@@ -17,7 +18,7 @@ class _MySplashState extends State<MySplash> {
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const MyHome()));
+          context, MaterialPageRoute(builder: (context) => MyRoute(id: '5171133', nama: 'Rs umum puri',)));
     });
   }
 
