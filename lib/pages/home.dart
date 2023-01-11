@@ -29,6 +29,7 @@ class _MyHomeState extends State<MyHome> {
       fetchData();
       fetchData();
       fetchData();
+      fetchData();
     }
   }
 
@@ -162,10 +163,10 @@ class _MyHomeState extends State<MyHome> {
                                   height: 10,
                                 ),
                                 (hospitals.isEmpty)
-                                    ? Container(                                      
-                                      height: 500,
-                                      child: Center(
-                                        child: SizedBox(
+                                    ? Container(
+                                        height: 500,
+                                        child: Center(
+                                          child: SizedBox(
                                             height: 19,
                                             width: 19,
                                             child: CircularProgressIndicator(
@@ -173,8 +174,8 @@ class _MyHomeState extends State<MyHome> {
                                               strokeWidth: 3,
                                             ),
                                           ),
-                                      ),
-                                    )
+                                        ),
+                                      )
                                     : Text(''),
                                 Center(
                                   child: Text('$status'),
@@ -215,9 +216,11 @@ class _MyHomeState extends State<MyHome> {
                                                 namaRumahSakit:
                                                     filter_display[index].name,
                                                 alamatRumahSakit:
-                                                    filter_display[index].address,
+                                                    filter_display[index]
+                                                        .address,
                                                 id: filter_display[index].id,
-                                                telp: filter_display[index].phone,
+                                                telp:
+                                                    filter_display[index].phone,
                                                 kelas: filter_display[index]
                                                     .available_beds
                                                     .bed_class,
