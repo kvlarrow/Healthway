@@ -27,6 +27,9 @@ class _MyHomeState extends State<MyHome> {
     if (hospitals.isEmpty) {
       fetchData();
       fetchData();
+      fetchData();
+      fetchData();
+      fetchData();
     }
   }
 
@@ -50,7 +53,7 @@ class _MyHomeState extends State<MyHome> {
         id: e['id'],
         name: e['name'],
         address: e['address'],
-        phone: e['phone'],
+        phone: e['phone'].toString(),
         available_beds: beds,
       );
     }).toList();
@@ -157,9 +160,9 @@ class _MyHomeState extends State<MyHome> {
                                 ),
                                 (hospitals.isEmpty)
                                     ? Container(
-                                      height: 500,
-                                      child: Center(
-                                        child: SizedBox(
+                                        height: 500,
+                                        child: Center(
+                                          child: SizedBox(
                                             height: 19,
                                             width: 19,
                                             child: CircularProgressIndicator(
@@ -167,8 +170,8 @@ class _MyHomeState extends State<MyHome> {
                                               strokeWidth: 3,
                                             ),
                                           ),
-                                      ),
-                                    )
+                                        ),
+                                      )
                                     : Text(''),
                                 Center(
                                   child: Text('$status'),
