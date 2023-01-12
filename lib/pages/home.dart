@@ -27,6 +27,7 @@ class _MyHomeState extends State<MyHome> {
     if (hospitals.isEmpty) {
       fetchData();
       fetchData();      
+      fetchData();      
     }
   }
 

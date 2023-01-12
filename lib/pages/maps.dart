@@ -87,7 +87,10 @@ class _MyMapsState extends State<MyMaps> {
                                           );
                                         },
                                         title: Text(
-                                            widget.hospitalMap[index].name),
+                                            widget.hospitalMap[index].name, style: GoogleFonts.meeraInimai(fontSize: 15, color: MyColor.black),),
+                                        subtitle: Text(
+                                            widget.hospitalMap[index].address, style: GoogleFonts.meeraInimai(fontSize: 12, color: Colors.grey.shade600),),
+                                        hoverColor: MyColor.mainColor,                                            
                                       );
                                     },
                                   ),

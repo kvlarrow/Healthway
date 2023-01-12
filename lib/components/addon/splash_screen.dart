@@ -18,7 +18,7 @@ class _MySplashState extends State<MySplash> {
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => MyRoute(id: '5171133', nama: 'Rs umum puri',)));
+          context, MaterialPageRoute(builder: (context) => MyHome()));
     });
   }
 

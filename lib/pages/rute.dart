@@ -157,7 +157,7 @@ class _MyRouteState extends State<MyRoute> {
                                             ),
                                     ),
                                   ].toSet(),
-                                  mapType: MapType.hybrid,
+                                  mapType: MapType.normal,
                                   initialCameraPosition: _kGooglePlex,
                                   onMapCreated:
                                       (GoogleMapController controller) {
