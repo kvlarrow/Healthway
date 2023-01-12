@@ -1,0 +1,11 @@
+{
+    "status": 200,
+    "data": {
+      "nama": "RS ISLAM SURABAYA",
+      "kode_rs": "3578111",
+      "tempat_tidur": 299,
+      "telepon": "(031) 8284505",
+      "lat": "-7.306354",
+      "lon": "112.734975"
+    }
+  }

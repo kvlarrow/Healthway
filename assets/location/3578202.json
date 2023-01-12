@@ -1,0 +1,11 @@
+{
+    "status": 200,
+    "data": {
+      "nama": "RS MATA UNDAAN",
+      "kode_rs": "3578202",
+      "tempat_tidur": 51,
+      "telepon": "(031) 5343806",
+      "lat": "-7.254195",
+      "lon": "112.743572"
+    }
+  }

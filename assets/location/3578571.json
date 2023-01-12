@@ -1,0 +1,11 @@
+{
+    "status": 200,
+    "data": {
+      "nama": "RS UMUM DAERAH DR. MOHAMAD SOEWANDHIE",
+      "kode_rs": "3578571",
+      "tempat_tidur": 433,
+      "telepon": "(031) 3717141",
+      "lat": "-7.245929",
+      "lon": "112.758011"
+    }
+  }

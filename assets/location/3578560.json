@@ -1,0 +1,11 @@
+{
+    "status": 200,
+    "data": {
+      "nama": "RS HUSADA UTAMA SURABAYA",
+      "kode_rs": "3578560",
+      "tempat_tidur": 459,
+      "telepon": "(031) 5018335",
+      "lat": "-7.264893",
+      "lon": "112.75623"
+    }
+  }

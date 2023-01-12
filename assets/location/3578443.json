@@ -1,0 +1,11 @@
+{
+    "status": 200,
+    "data": {
+      "nama": "RS UMUM SILOAM HOSPITALS SURABAYA",
+      "kode_rs": "3578443",
+      "tempat_tidur": 250,
+      "telepon": "(031) 99206900",
+      "lat": "-7.274033",
+      "lon": "112.746518"
+    }
+  }

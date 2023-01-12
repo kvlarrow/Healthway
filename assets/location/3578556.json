@@ -1,0 +1,11 @@
+{
+    "status": 200,
+    "data": {
+      "nama": "RS PREMIER SURABAYA",
+      "kode_rs": "3578556",
+      "tempat_tidur": 233,
+      "telepon": "(031) 5993211",
+      "lat": "-7.304471",
+      "lon": "112.76525"
+    }
+  }
