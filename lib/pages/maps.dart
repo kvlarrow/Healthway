@@ -43,7 +43,7 @@ class _MyMapsState extends State<MyMaps> {
                       color: MyColor.mainColor,
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        'RS terdekat',
+                        'Daftar Lokasi RS',
                         style: GoogleFonts.meeraInimai(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -64,7 +64,7 @@ class _MyMapsState extends State<MyMaps> {
                       child: Column(
                         children: [
                           Container(
-                            height: 500,
+                            height: MediaQuery.of(context).size.height - 80,
                             padding: EdgeInsets.all(23),
                             child: Column(
                               children: [
@@ -82,15 +82,25 @@ class _MyMapsState extends State<MyMaps> {
                                                     .hospitalMap[index].name,
                                                 id: widget
                                                     .hospitalMap[index].id,
+                                                address: widget
+                                                    .hospitalMap[index].address,
                                               ),
                                             ),
                                           );
                                         },
                                         title: Text(
-                                            widget.hospitalMap[index].name, style: GoogleFonts.meeraInimai(fontSize: 15, color: MyColor.black),),
+                                          widget.hospitalMap[index].name,
+                                          style: GoogleFonts.meeraInimai(
+                                              fontSize: 15,
+                                              color: MyColor.black),
+                                        ),
                                         subtitle: Text(
-                                            widget.hospitalMap[index].address, style: GoogleFonts.meeraInimai(fontSize: 12, color: Colors.grey.shade600),),
-                                        hoverColor: MyColor.mainColor,                                            
+                                          widget.hospitalMap[index].address,
+                                          style: GoogleFonts.meeraInimai(
+                                              fontSize: 12,
+                                              color: Colors.grey.shade600),
+                                        ),
+                                        hoverColor: MyColor.mainColor,
                                       );
                                     },
                                   ),

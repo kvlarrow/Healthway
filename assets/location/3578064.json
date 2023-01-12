@@ -1,0 +1,11 @@
+{
+    "status": 200,
+    "data": {
+      "nama": "RS ADI HUSADA UNDAAN",
+      "kode_rs": "3578064",
+      "tempat_tidur": 293,
+      "telepon": "(031) 5318000",
+      "lat": "-7.251616",
+      "lon": "112.745866"
+    }
+  }

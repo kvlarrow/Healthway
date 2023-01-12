@@ -1,0 +1,11 @@
+{
+    "status": 200,
+    "data": {
+      "nama": "RS DR. RAMELAN",
+      "kode_rs": "3578020",
+      "tempat_tidur": 874,
+      "telepon": "(031) 8438153",
+      "lat": "-7.309681",
+      "lon": "112.738574"
+    }
+  }

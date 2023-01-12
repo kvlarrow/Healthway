@@ -26,20 +26,30 @@ class _MyHomeState extends State<MyHome> {
     super.initState();
     if (hospitals.isEmpty) {
       fetchData();
-      fetchData();      
-      fetchData();      
+      fetchData();
+      fetchData();
     }
+  }
+
+  Future<void> readJson() async {
+    final String response = await rootBundle.loadString('assets/sample.json');
+    final data = await json.decode(response);
   }
 
   void fetchData() async {
     print('Fetch hospitals');
-    const url =
-        'https://rs-bed-covid-api.vercel.app/api/get-hospitals?provinceid=35prop&cityid=3578&type=2';
-    final uri = Uri.parse(url);
-    final response = await http.get(uri);
-    final body = response.body;
-    final json = await jsonDecode(body);
+    // const url =
+    //     'https://rs-bed-covid-api.vercel.app/api/get-hospitals?provinceid=35prop&cityid=3578&type=2';
+    // final uri = Uri.parse(url);
+    // final response = await http.get(uri);
+    // final body = response.body;
+    // final json = await jsonDecode(body);
+    // final results = json['hospitals'] as List<dynamic>;
+    // if (results.isEmpty) {
+    final response = await rootBundle.loadString('assets/data.json');
+    final json = await jsonDecode(response);
     final results = json['hospitals'] as List<dynamic>;
+    // }
     final transformed = results.map((e) {
       final beds = Availabel_beds(
         availabel: e['available_beds'][0]['available'],
@@ -171,10 +181,13 @@ class _MyHomeState extends State<MyHome> {
                                         ),
                                       )
                                     : Text(''),
-                                
                                 Container(
                                   height: 400,
-                                  child: Center(child: Text(status, style: TextStyle(color: MyColor.black),)),
+                                  child: Center(
+                                      child: Text(
+                                    status,
+                                    style: TextStyle(color: MyColor.black),
+                                  )),
                                 ),
                                 Container(
                                   padding: EdgeInsets.only(top: 55),

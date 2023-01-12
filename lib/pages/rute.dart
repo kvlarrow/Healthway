@@ -15,7 +15,8 @@ import 'package:url_launcher/url_launcher.dart';
 class MyRoute extends StatefulWidget {
   String nama;
   String id;
-  MyRoute({required this.nama, required this.id});
+  String address;
+  MyRoute({required this.nama, required this.id, required this.address});
 
   @override
   State<MyRoute> createState() => _MyRouteState();
@@ -28,14 +29,14 @@ class _MyRouteState extends State<MyRoute> {
       Completer<GoogleMapController>();
   late CameraPosition _kGooglePlex = CameraPosition(
     target:
-        LatLng(double.parse(lokasiRs['lat']), double.parse(lokasiRs['long'])),
+        LatLng(double.parse(lokasiRs['lat']), double.parse(lokasiRs['lon'])),
     zoom: 14.4746,
   );
 
   late CameraPosition _kLake = CameraPosition(
       bearing: 192.8334901395799,
       target:
-          LatLng(double.parse(lokasiRs['lat']), double.parse(lokasiRs['long'])),
+          LatLng(double.parse(lokasiRs['lat']), double.parse(lokasiRs['lon'])),
       tilt: 50.440717697143555,
       zoom: 17.151926040649414);
 
@@ -74,7 +75,7 @@ class _MyRouteState extends State<MyRoute> {
     String lat = position.latitude.toString();
 
     launch(
-        'https://www.google.com/maps/dir/?api=1&origin=${lat},${long}&destination=${lokasiRs['lat']},${lokasiRs['long']}');
+        'https://www.google.com/maps/dir/?api=1&origin=${lat},${long}&destination=${lokasiRs['lat']},${lokasiRs['lon']}');
   }
 
   Future<void> _goToTheLake() async {
@@ -84,12 +85,15 @@ class _MyRouteState extends State<MyRoute> {
 
   void fetchLocation() async {
     print('fetch users called');
-    var url =
-        'https://rs-bed-covid-indo-api-six.vercel.app/api/get-hospital-map?hospitalid=${widget.id}';
-    final uri = Uri.parse(url);
-    final response = await http.get(uri);
-    final body = response.body;
-    final json = jsonDecode(body);
+    // var url =
+    //     'https://rs-bed-covid-indo-api-six.vercel.app/api/get-hospital-map?hospitalid=${widget.id}';
+    // final uri = Uri.parse(url);
+    // final response = await http.get(uri);
+    // final body = response.body;
+    // final json = jsonDecode(body);
+    final response =
+        await rootBundle.loadString('assets/location/${widget.id}.json');
+    final json = jsonDecode(response);
     setState(() {
       lokasiRs = json['data'];
     });
@@ -101,14 +105,14 @@ class _MyRouteState extends State<MyRoute> {
 
       CameraPosition _kGooglePlex = CameraPosition(
         target: LatLng(
-            double.parse(lokasiRs['lat']), double.parse(lokasiRs['long'])),
+            double.parse(lokasiRs['lat']), double.parse(lokasiRs['lon'])),
         zoom: 14.4746,
       );
 
       CameraPosition _kLake = CameraPosition(
           bearing: 192.8334901395799,
           target: LatLng(
-              double.parse(lokasiRs['lat']), double.parse(lokasiRs['long'])),
+              double.parse(lokasiRs['lat']), double.parse(lokasiRs['lon'])),
           tilt: 50.440717697143555,
           zoom: 17.151926040649414);
     });
@@ -149,7 +153,7 @@ class _MyRouteState extends State<MyRoute> {
                                       position: (lokasiRs['lat'] != null)
                                           ? LatLng(
                                               double.parse(lokasiRs['lat']),
-                                              double.parse(lokasiRs['long']),
+                                              double.parse(lokasiRs['lon']),
                                             )
                                           : LatLng(
                                               double.parse('34.135475'),
@@ -248,9 +252,7 @@ class _MyRouteState extends State<MyRoute> {
                               ),
                               Center(
                                 child: Text(
-                                  (lokasiRs['address'] != null)
-                                      ? lokasiRs['address']
-                                      : '',
+                                  widget.address,
                                   style: GoogleFonts.meeraInimai(
                                       fontSize: 12,
                                       fontWeight: FontWeight.normal,

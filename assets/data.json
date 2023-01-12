@@ -1,0 +1,313 @@
+{
+    "status": 200,
+    "hospitals": [
+      {
+        "id": "3578020",
+        "name": "RS dr. Ramelan",
+        "address": "Jl. Gadung No. 1 Surabaya",
+        "phone": "0318404062",
+        "available_beds": [
+          {
+            "available": 143,
+            "bed_class": "Kelas I",
+            "room_name": "Ruang A1, A2, B1, B2, C1, C2, D1, D2, E2, F1, F2, G1, G2, H1, H2, HCU, ICCU, ICU, dll",
+            "info": "Diupdate 17 jam yang lalu"
+          }
+        ]
+      },
+      {
+        "id": "3578064",
+        "name": "RS Adi Husada Undaan",
+        "address": "Jl. Undaan Wetan No. 40-44, Surabaya",
+        "phone": "0315355555",
+        "available_beds": [
+          {
+            "available": 19,
+            "bed_class": "Kelas I",
+            "room_name": "Ruang D4 ; D3 ; D2 ; H3 ; H2 ; A2",
+            "info": "Diupdate 12 jam yang lalu"
+          }
+        ]
+      },
+      {
+        "id": "3578086",
+        "name": "RS Primasatya Husada Citra (PHC) Surabaya",
+        "address": "Jl. Prapat Kurung Selatan no 1 Tanjung Perak Surabaya",
+        "phone": "0313294118",
+        "available_beds": [
+          {
+            "available": 1,
+            "bed_class": "Kelas I",
+            "room_name": "Ruang MIRAH, MUTIARA, PYRUS, SAFIR, EMERALD, RUBY",
+            "info": "Diupdate 11 jam yang lalu"
+          }
+        ]
+      },
+      {
+        "id": "3578111",
+        "name": "RS Islam Surabaya",
+        "address": "Jl. Jend A Yani 2-4 Surabaya",
+        "phone": "081231159315",
+        "available_beds": [
+          {
+            "available": 1,
+            "bed_class": "Kelas I",
+            "room_name": "Ruang Makkah",
+            "info": "Diupdate 12 jam yang lalu"
+          }
+        ]
+      },
+      {
+        "id": "3578202",
+        "name": "RS Mata Undaan",
+        "address": "Jl. Undaan Kulon 17-19 Surabaya",
+        "phone": "0315343806",
+        "available_beds": [
+          {
+            "available": 8,
+            "bed_class": "Kelas I",
+            "room_name": "Ruang 101 - 108",
+            "info": "Diupdate 11 jam yang lalu"
+          }
+        ]
+      },
+      {
+        "id": "3578322",
+        "name": "RS Umum Daerah Husada Prima",
+        "address": "Jl. Karang Tembok No. 39 Surabaya",
+        "phone": "0313713836",
+        "available_beds": [
+          {
+            "available": 1,
+            "bed_class": "Kelas III",
+            "room_name": "Ruang IGD NON INFEKSIUS",
+            "info": "Diupdate 12 jam yang lalu"
+          }
+        ]
+      },
+      {
+        "id": "3578443",
+        "name": "RS Umum Siloam Hospitals Surabaya",
+        "address": "Jl. Gubeng Raya 70 Surabaya",
+        "phone": "081808690069",
+        "available_beds": [
+          {
+            "available": 50,
+            "bed_class": "Kelas I",
+            "room_name": "Ruang Rawat Inap",
+            "info": "Diupdate 8 jam yang lalu"
+          }
+        ]
+      },
+      {
+        "id": "3578523",
+        "name": "RS Umum Daerah Haji Provinsi Jawa Timur",
+        "address": "Jl. Manyar Kertoadi  Surabaya",
+        "phone": "0315924000",
+        "available_beds": [
+          {
+            "available": 2,
+            "bed_class": "Kelas I",
+            "room_name": "Ruang Hemato-Onkologi",
+            "info": "Diupdate 20 jam yang lalu"
+          }
+        ]
+      },
+      {
+        "id": "3578556",
+        "name": "RS Premier Surabaya",
+        "address": "Jl. Nginden Intan Barat B",
+        "phone": "081132241527",
+        "available_beds": [
+          {
+            "available": 6,
+            "bed_class": "Kelas I",
+            "room_name": "Ruang Pediatric Surgical",
+            "info": "Diupdate 13 jam yang lalu"
+          }
+        ]
+      },
+      {
+        "id": "3578560",
+        "name": "RS Husada Utama Surabaya",
+        "address": "Jl. Prof. Dr. Moestopo 31-33-35 Surabaya",
+        "phone": "0315100555",
+        "available_beds": [
+          {
+            "available": 10,
+            "bed_class": "Kelas I",
+            "room_name": "Ruang Lantai 9, 10, 11, 12",
+            "info": "Diupdate 6 jam yang lalu"
+          }
+        ]
+      },
+      {
+        "id": "3578571",
+        "name": "RS Umum Daerah dr. Mohamad Soewandhie",
+        "address": "Jl. Tambakrejo No. 45-47 Surabaya",
+        "phone": "0313717141",
+        "available_beds": [
+          {
+            "available": 0,
+            "bed_class": "Kelas I",
+            "room_name": "Ruang SERUNI",
+            "info": "Diupdate 17 jam yang lalu"
+          }
+        ]
+      },
+      {
+        "id": "3578582",
+        "name": "RS Umum  Mitra Keluarga Surabaya",
+        "address": "Jl. Satelit Indah II darmo satelit",
+        "phone": "0317345333",
+        "available_beds": [
+          {
+            "available": 18,
+            "bed_class": "Kelas I",
+            "room_name": "Ruang nsb,nsd,nsf,nsg",
+            "info": "Diupdate 4 jam yang lalu"
+          }
+        ]
+      },
+      {
+        "id": "3578593",
+        "name": "RS Ibu dan Anak Pura Raharja",
+        "address": "Jl. Pucang Adi No.12 - 14 Surabaya",
+        "phone": "0315019898",
+        "available_beds": [
+          {
+            "available": 15,
+            "bed_class": "Kelas I",
+            "room_name": "Ruang 9",
+            "info": "Diupdate 12 jam yang lalu"
+          }
+        ]
+      },
+      {
+        "id": "3578625",
+        "name": "RS Gigi dan Mulut FKG Universitas Airlangga",
+        "address": "Jl. Prof Dr. Moestopo 47 Surabaya",
+        "phone": "0315053195",
+        "available_beds": [
+          {
+            "available": 2,
+            "bed_class": "Kelas I",
+            "room_name": "Ruang Rawat Inap",
+            "info": "Diupdate 7 jam yang lalu"
+          }
+        ]
+      },
+      {
+        "id": "3578766",
+        "name": "RS Wiyung Sejahtera",
+        "address": "Jl. Karangan PDAM 1-3 Wiyung Surabaya",
+        "phone": "0317532653",
+        "available_beds": [
+          {
+            "available": 24,
+            "bed_class": "Kelas II",
+            "room_name": "Ruang 8",
+            "info": "Diupdate 19 jam yang lalu"
+          }
+        ]
+      },
+      {
+        "id": "3578780",
+        "name": "RS Orthopedi dan Traumatologi Surabaya",
+        "address": "EMERALD MANSION TX 10 CITRALAND, SURABAYA",
+        "phone": "03157431299",
+        "available_beds": [
+          {
+            "available": 3,
+            "bed_class": "Kelas I",
+            "room_name": "Ruang Superior",
+            "info": "Diupdate 14 jam yang lalu"
+          }
+        ]
+      },
+      {
+        "id": "3578782",
+        "name": "RS Surabaya Medical Service",
+        "address": "Jl. Kapuas No. 2 Surabaya",
+        "phone": "0315686161",
+        "available_beds": [
+          {
+            "available": 2,
+            "bed_class": "Kelas I",
+            "room_name": "Ruang SAKURA 1, SAKURA 2,SAKURA 3",
+            "info": "Diupdate 11 jam yang lalu"
+          }
+        ]
+      },
+      {
+        "id": "3578786",
+        "name": "RS Mata Masyarakat Jawa Timur",
+        "address": "JL. Ketintang Baru Selatan I No. 1 Surabaya",
+        "phone": "03182010000",
+        "available_beds": [
+          {
+            "available": -5,
+            "bed_class": "Kelas I",
+            "room_name": "Ruang Kelas I Laki-laki",
+            "info": "Diupdate 13 jam yang lalu"
+          }
+        ]
+      },
+      {
+        "id": "3578791",
+        "name": "RS Ibu dan Anak Graha Medika",
+        "address": "Graha Sampurna Indah E-3-6-8-10-12-14-16-18-20-22 Surabaya",
+        "phone": "0317523434",
+        "available_beds": [
+          {
+            "available": 4,
+            "bed_class": "Kelas I",
+            "room_name": "Ruang Ruang  Ghofur 1, Rizky 1, Rizky 2, Rizky 3",
+            "info": "Diupdate 12 jam yang lalu"
+          }
+        ]
+      },
+      {
+        "id": "3578794",
+        "name": "RS Ibu dan Anak Pusura Tegalsari",
+        "address": "JL. Tegalsari No.59 Surabaya",
+        "phone": "0315473452",
+        "available_beds": [
+          {
+            "available": 11,
+            "bed_class": "Kelas I",
+            "room_name": "Ruang Boegenvil",
+            "info": "Diupdate 12 jam yang lalu"
+          }
+        ]
+      },
+      {
+        "id": "3578795",
+        "name": "RS Ibu dan Anak Ferina",
+        "address": "Jl. Irian Barat No. 7-11 Surabaya",
+        "phone": "0315057557",
+        "available_beds": [
+          {
+            "available": 4,
+            "bed_class": "Kelas I",
+            "room_name": "Ruang -",
+            "info": "Diupdate 12 jam yang lalu"
+          }
+        ]
+      },
+      {
+        "id": "3578808",
+        "name": "Mayapada Hospital Surabaya ",
+        "address": "Jl. Mayjend Sungkono No. 16-20",
+        "phone": null,
+        "available_beds": [
+          {
+            "available": 2,
+            "bed_class": "Kelas I",
+            "room_name": "Ruang Deluxe",
+            "info": "Diupdate 11 jam yang lalu"
+          }
+        ]
+      }
+    ]
+  }
